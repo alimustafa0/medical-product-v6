@@ -1,0 +1,50 @@
+{% load static %}
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ثيرم</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <link rel="stylesheet" href="{% static 'style.css' %}" id="theme-style">
+</head>
+
+{% block content %}
+<button id="dark-mode-toggle" class="night-mode-button">
+    <span class="moon-icon">🌙</span>
+    <span class="button-text">الوضع الليلي</span>
+</button>
+<div id="content-wrapper">
+    <div class="photos">
+        <!-- You can add your photos here, for example: -->
+        <img src="/static/a.png" alt="Product Photo 1">
+        <img src="/static/b.png" alt="Product Photo 2" style="max-width:600px; height:800px">
+        <img src="/static/c.gif" alt="Product Photo 3">
+        <img src="/static/d.png" alt="Product Photo 4">
+        <img src="/static/e.png" alt="Product Photo 5" style="image-rendering: pixelated; height:800px">
+        <img src="/static/f.png" alt="Product Photo 6">
+        <img src="/static/g.png" alt="Product Photo 7">
+    </div>
+
+<form action="" method="post">
+    {% csrf_token %}
+    <h2 style="text-align: center;">حبوب ثيرم الامريكي</h2>
+    <p style="text-align: right;">معلومات الزبون</p>
+    <input style="text-align: right;" type="text" name="full_name" placeholder="الاسم الثلاثي" required>
+    <input style="text-align: right;" type="text" name="phone_number" placeholder="رقم الجوال" required>
+    <input style="text-align: right;" type="text" name="country" placeholder="الدولة" required>
+    <input style="text-align: right;" type="text" name="address" placeholder="العنوان" required>
+    <button type="submit">اضغط هنا للطلب</button>
+</form>
+</div>
+    
+</div>
+<footer class="whatsapp-footer">
+    <p class="whatsapp-text">
+        يمكنك ايضا التواصل معنا على 
+        <img src="{% static 'whatsapp.png' %}" alt="WhatsApp Icon" class="whatsapp-icon">
+        واتس اب <span class="whatsapp-number">00971581022801</span>
+    </p>
+</footer>
+
+<script src="{% static 'script.js' %}"></script>
+{% endblock %}
